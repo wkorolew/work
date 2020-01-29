@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html data-select2-id="16" lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Stellenanzeigen | Vertriebskarriere.com</title>    <meta charset="utf-8">
+<meta name="robots" content="index,follow">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    <script type="text/javascript" src="index-Dateien/core.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+<script type="text/javascript">
+    //<!--
+    var lang="de";var basePath="";
+    //-->
+</script>
+<script type="text/javascript" src="index-Dateien/geoselect.js"></script>
+<script type="text/javascript" src="index-Dateien/core_003.js"></script>
+<script type="text/javascript" src="index-Dateien/core_002.js"></script>
+<script type="text/javascript" src="index-Dateien/jobs_002.js"></script>
+<script type="text/javascript" src="index-Dateien/bootstrap-dialog.js"></script>
+<script type="text/javascript">
+    //<!--
+    (function($) {
+
+    $(function() {
+        var $tabbar = $('#search-tabs');
+
+        $('#jobs-list-container').on('yk-paginator-container:loaded.gastro24 g24-jobs:init', function(ev) {
+            $tabbar.show();
+            var html = $('#jobs-list-container').find('.pagination-content').html();
+
+            if ('' === html.trim()) { $tabbar.hide(); }
+
+            $('#jobs-list-container ul.pagination a, link[rel="prev"], link[rel="next"]').each(function() {
+                var $a = $(this), href = $a.attr('href');
+                console.debug($a, href);
+                if (href) {
+                    href = href.replace(/__region_MultiString/, 'r')
+                               .replace(/__city_MultiString/, 'l')
+                               .replace(/__organizationTag/, 'c')
+                               .replace(/__profession_MultiString/, 'p')
+                               .replace(/__industry_MultiString/, 'i')
+                               .replace(/__employmentType_MultiString/, 't');
+                    $a.attr('href', href);
+                }
+            });
+
+        }).trigger('g24-jobs:init');
+
+        var $jobCount = $('#job-count');
+
+        $('#jobs-list-container').on('yk-paginator-container:loaded.gastro24-job-count', function(ev) {
+            var count = $('#update-job-count').text();
+            $jobCount.text(count);
+        });
+
+        $('#jobs-list-filter').on('reset.gastro24', function(ev) { $(ev.target).find('input.facet-param').remove(); });
+
+    });
+})(jQuery);
+
+    //-->
+</script>
+<script type="text/javascript" src="index-Dateien/jobs.js"></script>
+<script type="text/javascript" src="index-Dateien/core_004.js"></script>
+<script type="text/javascript">
+    //<!--
+        (function(){
+        var $form,
+            $modal,
+            init = function () {
+                $form = $('#jobsbymail-subscribe-form');
+                $modal = $('#job-by-mail-subscribe-modal');
+                $form.on('yk:forms:success', function(event, data) {
+                    if ('valid' in data.data && data.data.valid) {
+                        $modal.find('.modal-body').html(data.data.content);
+                        $modal.find('.modal-footer .btn-primary').remove();
+                    }
+                });
+            };
+        
+        $(function () {
+            init();
+            
+            $('#jobs-list-container').on('yk-paginator-container:loaded', function() {
+                init();
+                $form.form().find('select').each($.fn.form.initSelect);
+                $form.find('select.geoselect').geoSelect();
+            });
+        });
+    })();
+
+    //-->
+</script>
+<script type="text/javascript">
+    //<!--
+    ;(function($) { $(function() { $("#jobs-list-filter").find("button[type='reset']").text("X"); }); })(jQuery);
+    //-->
+</script>
+<script type="text/javascript" src="index-Dateien/vertriebskarriere.js"></script>
+<script type="text/javascript" src="index-Dateien/de.js"></script>
+<script type="text/javascript">
+    //<!--
+    var lang="de";var basePath="";
+    //-->
+</script>    <link href="index-Dateien/core.css" media="screen" rel="stylesheet" type="text/css">
+<link href="index-Dateien/layout.css" media="screen" rel="stylesheet" type="text/css">
+<link href="https://www.vertriebskarriere.com/de/jobs?page=2" rel="next">
+<style>
+body{
+font-family: 'Open Sans',sans-serif;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+}
+.logo{
+float: left;
+margin: 0 0 0 20px;
+padding: 25px 0 0 0;
+position: static !important;
+width: 70px;
+}
+.logo img{
+max-width: 90%;
+}
+.logotype{
+    color: #fff;
+    float: left;
+    font-size: 40px;
+    padding: 30px 0 0 15px
+}
+.logotype span{
+    text-transform: uppercase;
+    font-weight:600;
+}
+.navbar-header .menu-logo {
+    width: 70px;
+    position: static;
+    top: 0%;
+}
+#main-navigation .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    color:#fff;
+    margin-right: 25px;
+}
+.bg-static {
+    background-image: none;
+    background-color: #02819e
+    background-size: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline;
+    min-height: auto;
+}
+.search-form-container .searchform {
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: auto;
+    background:#02819e;
+    padding: 40px;
+}
+.search-form-container input[type="text"] {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    margin-right: 5px;
+}
+.input-group .form-control {
+    font-size: 16px;
+    font-weight: 300;
+}
+.input-group .form-control:first-child{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+background-color:#fff;
+background-image: none;
+border: 2px solid#ccc;
+border-radius: 0px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.select2-container--bootstrap .select2-selection--single {
+    height: 45px !important;
+    line-height: 1.42857143;
+    padding: 6px 24px 6px 12px;
+}
+.select2-container--bootstrap .select2-selection {
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+background-color:#fff;
+border: 2px solid#ccc;
+border-radius: 0px;
+color:#555;
+font-family: sans-serif;
+font-size: 16px;
+outline: 0;
+}
+.btn{
+    padding: 11px 12px;
+    font-size: 15px;
+}
+.search-form-container .searchform {
+    padding: 0px;
+}
+#formular{
+    border-bottom: 1px solid #fff;
+    margin-bottom: 15px;
+    opacity: 0.3;
+}
+.search-form-container .btn-primary {
+    width: 75% !important;
+    background-color: #db9a00;
+    border: 1px solid #db9a00;
+}
+label {font-weight: 300;}
+.featured-image-box .img-box {
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+.img-box {
+    float: left;
+}
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+    position: static;
+}
+.content-area p{
+   display: inline-block;
+
+}
+</style>
+
+</head>
+<body data-select2-id="15">
+    <header id="header" role="banner" style="background-color: #02819e; background-repeat: no-repeat; background-image:none; background-position: left bottom;">
+        <div style="border-bottom:"></div>
+          <div class="navbar">
+		     <div class="row">
+               <div class="navbar-header">
+                 <button class="navbar-toggle collapsed" data-target="#main-navigation" data-toggle="collapse" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <div class="logo"><img src="logo_icon.png" alt="Jobs in Frankfurt"></div>
+                  <div class="logotype"><span>Vertriebs</span>karriere</div>
+                  <!--<div class="logo">
+                    <a class="menu-logo" href="https://www.vertriebskarriere.com/de">
+                        
+                    </a>
+                  </div>-->
+                </div>
+                <nav id="main-navigation" class="navbar-collapse collapse navbar-collapse" role="navigation">
+
+
+                    <ul id="yk-login-info" style="margin-left:-15px;" class="nav navbar-nav  navbar-collapse collapse navbar-right">
+        <li class="dropdown">
+    
+                        <a href="https://www.vertriebskarriere.com/de/login?ref=%252Fde%252Fdashboard">
+                   <!-- <span class="yk-icon yk-icon-login fa-fw"></span>--> Einloggen            </a>
+                </li>
+    </ul>
+    <div id="su-select-dialog" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Wählen Sie den Benutzer, dessen Identität Sie übernehmen wollen.:
+                    <button type="button" class="close pull-right" data-dismiss="modal">
+                        <span>×</span>
+                    </button></h5>
+                </div>
+                <div class="modal-body">
+                    <form id="su-form" action="/de/user/switch" method="get" class="form-horizontal"><select id="su-user-list" name="id" class="form-control select2-hidden-accessible" data-select2-id="su-user-list" tabindex="-1" aria-hidden="true"></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" data-select2-id="5" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-su-user-list-container"><span class="select2-selection__rendered" id="select2-su-user-list-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></form>
+    
+                    <script type="text/javascript">
+                        $('#su-form').submit(function(e) {
+                           var $form = $(e.target);
+                            $.get($form.attr('action'), $form.serialize(), function() { window.location.reload(); });
+                            return false;
+                        });
+    
+                        $('#su-user-list').select2({
+                            theme: "bootstrap",
+                            width: '100%',
+                            minimumInputLength: 0,
+                            ajax: {
+                                url: basePath + '/' + lang + '/user/switch',
+                                dataType: 'json',
+                                delay: 200,
+                                data: function(params) {
+                                    return { "do": "list", q: params.term, page: params.page };
+                                },
+                                processResults: function(data, params) {
+                                    params.page = params.page || 1;
+                                    return {
+                                        results: data.items,
+                                        pagination: {
+                                            more: params.page * 20 < data.total
+                                        }
+                                    };
+                                }
+                            },
+                            templateResult: function(data) {
+                                if (data.loading) { return data.text; }
+                                return data.name + (data.email ? ' <' + data.email + '>' : '') + (data.login ? ' [' + data.login + ']' : '');
+                            },
+                            templateSelection: function(data) {
+                                if (!data.id) { return data.text; }
+                                return data.login;
+                            },
+                            escapeMarkup: function (m) { return m; }
+                        });
+    
+                    </script>
+    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="$('#su-form').submit()">Benutzer wechseln</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <ul class="nav navbar-nav navbar-default pull-right">
+        <li>
+            <a href="https://www.vertriebskarriere.com/de/jobs?clear=1">Jobs</a>
+        </li>
+    </ul>
+                </nav>
+            </div>
+            
+            
+            <!-- /main-navigation -->
+        </div>
+     
+        <div id="formular"></div>
+
+
+        <div id="jobs-list-filter-wrapper">
+            <div class="search-form-container bg-static">
+                <div class="container ">
+                    
+                    <div class="searchform" data-select2-id="13">
+                        <form class="form-inline search-form" data-handle-by="native" method="get" id="jobs-list-filter" name="searchform" action="/de/jobs" data-select2-id="jobs-list-filter">                <div class="row">
+                        <div class="input-group col-md-4 col-xs-12 pull-left"><input type="text" placeholder="Suchanfrage" class="form-control" name="q"></div>
+                        <div class="input-group col-md-4 col-xs-6 pull-left" data-select2-id="12"><select data-placeholder="Ort" data-autoinit="" data-clear-on-reset="1" class="geoselect select2-hidden-accessible" name="l" data-width="100%" style="display:none" data-height="55px" data-select2-id="2" tabindex="-1" aria-hidden="true"><option value="{&quot;city&quot;:&quot;Frankfurt am Main&quot;,&quot;region&quot;:&quot;Hessen&quot;,&quot;coordinates&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[8.68417,50.11552]}}" data-select2-id="27" selected="selected"></option></select><span class="select2 select2-container select2-container--bootstrap select2-container--below" dir="ltr" data-select2-id="3" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-l-7v-container"><span class="select2-selection__rendered" id="select2-l-7v-container" role="textbox" aria-readonly="true" title="">Frankfurt am Main</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+                        <div class="input-group col-md-1 col-xs-6 pull-left"><select name="d" data-default-index="1" data-searchbox="-1" data-allowclear="false" data-placeholder="Umkreis" data-width="100%" data-select2-id="6" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true"><option value="5">5 km</option>
+        <option value="10" selected="selected" data-select2-id="8">10 km</option>
+        <option value="20">20 km</option>
+        <option value="50">50 km</option>
+        <option value="100">100 km</option></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" data-select2-id="7" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-d-oz-container"><span class="select2-selection__rendered" id="select2-d-oz-container" role="textbox" aria-readonly="true" title="10 km">10 km</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+                        <div class="input-group col-md-2 col-xs-12 pull-left"><button type="submit" class="btn btn-primary">Suche</button><button type="reset" class="btn btn-default" onclick="location.href='?clear=1';">X</button></div>
+                        </div>
+                        </form>            </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <style>
+            #similar a {
+            text-decoration: underline;
+            color: #3a434f;
+            margin-left: 8px;
+        }
+        </style>
+        
+        <div id="similar">
+           <div class="row">
+                <div class="col-md-9">
+                            </div>
+                <div class="col-md-3">
+                <div class="clearfix"></div>
+              </div>
+           </div>
+          <hr>
+        </div>
+
+    </header>
+     <style>
+
+     #content .navbar {
+
+         position:static!important;
+
+     }
+
+
+ </style>
+
+<main id="content" style="background-color:#f6f6f6;margin-bottom:0;padding-bottom:50px;min-height:65vh;padding-top:15px;position:relative;" data-select2-id="content">
+<div class="container" data-select2-id="14">
+        
+<div class="yk-notifications"></div>
+         
+
+
+
+
+
+    <div class="row">
+        <div class="tab-content">
+            <div id="jobs-list-container" class="pagination-container" data-message="&lt;strong&gt;Es tut uns leid.&lt;/strong&gt;, es gibt zur Zeit keine Stellenanzeigen, die Ihrem Suchkriterium entsprechen." data-uri="/de/jobs" style="position: relative;"><div style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(250, 250, 250, 0.5); display: none;" id="jobs-list-container-loading-indicator" class="pagination-loading"><i class="fa-spin yk-icon-spinner yk-icon fa-2x" style="position:absolute; top: 25%; left: 50%;"></i></div><div class="pagination-error alert alert-danger" style="display: none;"><strong>Sorry</strong>, loading results failed.</div>
+
+               <div class="col-md-12">
+                <div class="pagination-message alert alert-warning" style="display:none">
+                    <strong>Es tut uns leid.</strong>, es gibt zur Zeit keine Stellenanzeigen, die Ihrem Suchkriterium entsprechen.                </div>
+              </div>
+                <div class="container pagination-content">
+                    <div class="row">
+                       <div class="hidden" id="update-job-count">10777</div><style>
+  @media (min-width: 992px) {
+    .collapse.dont-collapse-sm {
+      display: block;
+      height: auto !important;
+      visibility: visible;
+    }
+  }
+</style>
+
+    <div class="col-md-3">
+        <div style="margin-bottom:15px">
+            <strong class="h2" style="color:#22436c">10777 Treffer für</strong>
+            <h1 style="display:inline;color:#22436c" class="h2">
+                Ihre Job-Suche            </h1>
+
+                                    
+	  </div>
+	
+
+    <div id="form-jobsbymail-subscribe-form" class="form-container"><div class="form-content"><button type="button" class="pull-right hidden visible-sm visible-xs btn btn-secondary" aria-expanded="false" data-toggle="collapse" data-target=".panel-group">Filter anzeigen
+    </button>
+<p>
+    <button class="btn btn-info" data-title="Jobs per E-Mail" data-toggle="modal" data-target="#job-by-mail-subscribe-modal" title="Jobs per E-Mail">
+        <i class="yk-icon yk-icon-envelope"></i>
+  <!--   Jobs per E-Mail-->
+    Jobsuche abonnieren
+      
+    </button>
+</p>
+
+<div id="job-by-mail-subscribe-modal" class="modal fade" role="dialog" aria-labelledby="job-by-mail-subscribe-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="job-by-mail-subscribe-label">Job-Mail kostenlos abonnieren und immer automatisch informiert werden</h3>
+            </div>
+            <form action="/de/jobsbymail/subscribe" id="jobsbymail-subscribe-form" name="searchform" method="POST" class=" form-horizontal">                <div class="modal-body">
+                                                                        <div class="controls controls-row row"><div class="col-md-3 yk-label"><label for="q">Suche</label></div><div class="col-md-9" id="q-span"><input type="text" placeholder="Suchanfrage" class="form-control form-control " name="q" id="q"><div id="q-errors" class="errors"></div></div></div>                                                                                                <div class="controls controls-row row"><div class="col-md-3 yk-label"><label for="l">Ort</label></div><div class="col-md-9" id="l-span"><select data-placeholder="Ort" data-autoinit="" data-clear-on-reset="1" class="geoselect form-control select2-hidden-accessible" name="l" data-width="100%" id="l" data-select2-id="l" tabindex="-1" aria-hidden="true"></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" data-select2-id="4" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-l-container"><span class="select2-selection__rendered" id="select2-l-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Ort</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><div id="l-errors" class="errors"></div></div></div>                                                                                                <div class="controls controls-row row"><div class="col-md-3 yk-label"><label for="d">Umkreis</label></div><div class="col-md-9" id="d-span"><select name="d" data-default-index="1" data-searchbox="-1" data-allowclear="false" data-placeholder="Umkreis" data-width="100%" id="d" class="form-control select2-hidden-accessible" data-select2-id="d" tabindex="-1" aria-hidden="true"><option value="5">5 km</option>
+<option value="10" selected="selected" data-select2-id="10">10 km</option>
+<option value="20">20 km</option>
+<option value="50">50 km</option>
+<option value="100">100 km</option></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" data-select2-id="9" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-d-container"><span class="select2-selection__rendered" id="select2-d-container" role="textbox" aria-readonly="true" title="10 km">10 km</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><div id="d-errors" class="errors"></div></div></div>                                                                <div class="controls controls-row row"><div class="col-md-3 yk-label"><label for="email">E-Mail</label></div><div class="col-md-9" id="email-span"><input type="email" name="email" required="required" placeholder="Bitte geben Sie Ihre E-Mail Adresse ein" id="email" class=" form-control "><div id="email-errors" class="errors"></div></div></div>                                                                                                                            </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal" aria-hidden="true">Schliessen</button>
+                    <button class="btn btn-primary" type="submit">Abonnieren</button>
+                </div>
+            </form>        </div>
+    </div>
+</div>
+</div></div>
+    <div class="panel-group collapse dont-collapse-sm">
+
+                                                                        
+                                                                    <div id="facets-box-employmentType_MultiString" class="panel panel-default">
+                <div class="panel-heading">
+                    <a class=" " style="display:block;width: 100%;text-decoration:none;" data-toggle="collapse" data-parent="#facets-box-employmentType_MultiString" href="#facets-box-employmentType_MultiString-content">
+                    Art der Anstellung                        <span class="small"></span>
+                    </a>
+
+                </div>
+                <div id="facets-box-employmentType_MultiString-content" class="panel-collapse collapse in">
+                <div class="panel-body">
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[Vollzeit]" class="facet-checkbox">
+                                Vollzeit (825)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[Teilzeit]" class="facet-checkbox">
+                                Teilzeit (107)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[Vollzeit, Teilzeit]" class="facet-checkbox">
+                                Vollzeit, Teilzeit (37)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[Voll- oder Teilzeit möglich]" class="facet-checkbox">
+                                Voll- oder Teilzeit möglich (36)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[Festanstellung]" class="facet-checkbox">
+                                Festanstellung (35)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[Unbefristet]" class="facet-checkbox">
+                                Unbefristet (25)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[geringfügige Beschäftigung]" class="facet-checkbox">
+                                geringfügige Beschäftigung (24)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[38,5]" class="facet-checkbox">
+                                38,5 (15)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[Voll- oder Teilzeit]" class="facet-checkbox">
+                                Voll- oder Teilzeit (10)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="employmentType_MultiString[Vollzeit - 40 Stunden / Woche]" class="facet-checkbox">
+                                Vollzeit - 40 Stunden / Woche (9)
+                            </label>
+                        </div>
+                                    </div>
+                </div> <!-- facets-collaps-* -->
+            </div>
+                        <div id="facets-box-region_MultiString" class="panel panel-default">
+                <div class="panel-heading">
+                    <a class="collapsed" style="display:block;width: 100%;text-decoration:none;" data-toggle="collapse" data-parent="#facets-box-region_MultiString" href="#facets-box-region_MultiString-content">
+                    Region                        <span class="small"></span>
+                    </a>
+
+                </div>
+                <div id="facets-box-region_MultiString-content" class="panel-collapse collapse ">
+                <div class="panel-body">
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Nordrhein-Westfalen]" class="facet-checkbox">
+                                Nordrhein-Westfalen (1819)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Bayern]" class="facet-checkbox">
+                                Bayern (1625)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Baden-Württemberg]" class="facet-checkbox">
+                                Baden-Württemberg (1424)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Niedersachsen]" class="facet-checkbox">
+                                Niedersachsen (910)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Hessen]" class="facet-checkbox">
+                                Hessen (779)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Berlin]" class="facet-checkbox">
+                                Berlin (615)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Hamburg]" class="facet-checkbox">
+                                Hamburg (539)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Schleswig-Holstein]" class="facet-checkbox">
+                                Schleswig-Holstein (471)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Sachsen]" class="facet-checkbox">
+                                Sachsen (385)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="region_MultiString[Rheinland-Pfalz]" class="facet-checkbox">
+                                Rheinland-Pfalz (299)
+                            </label>
+                        </div>
+                                    </div>
+                </div> <!-- facets-collaps-* -->
+            </div>
+                        <div id="facets-box-city_MultiString" class="panel panel-default">
+                <div class="panel-heading">
+                    <a class="collapsed" style="display:block;width: 100%;text-decoration:none;" data-toggle="collapse" data-parent="#facets-box-city_MultiString" href="#facets-box-city_MultiString-content">
+                    Städte                        <span class="small"></span>
+                    </a>
+
+                </div>
+                <div id="facets-box-city_MultiString-content" class="panel-collapse collapse ">
+                <div class="panel-body">
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[Berlin]" class="facet-checkbox">
+                                Berlin (615)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[Hamburg]" class="facet-checkbox">
+                                Hamburg (539)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[München]" class="facet-checkbox">
+                                München (452)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[Frankfurt am Main]" class="facet-checkbox">
+                                Frankfurt am Main (213)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[Nürnberg]" class="facet-checkbox">
+                                Nürnberg (187)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[Köln]" class="facet-checkbox">
+                                Köln (185)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[Stuttgart]" class="facet-checkbox">
+                                Stuttgart (154)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[Bremen]" class="facet-checkbox">
+                                Bremen (132)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="city_MultiString[Düsseldorf]" class="facet-checkbox">
+                                Düsseldorf (128)
+                            </label>
+                        </div>
+                                    </div>
+                </div> <!-- facets-collaps-* -->
+            </div>
+                        <div id="facets-box-organizationTag" class="panel panel-default">
+                <div class="panel-heading">
+                    <a class="collapsed" style="display:block;width: 100%;text-decoration:none;" data-toggle="collapse" data-parent="#facets-box-organizationTag" href="#facets-box-organizationTag-content">
+                    Firma                        <span class="small"></span>
+                    </a>
+
+                </div>
+                <div id="facets-box-organizationTag-content" class="panel-collapse collapse ">
+                <div class="panel-body">
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[ALDI Einkauf GmbH &amp; Co. OHG]" class="facet-checkbox">
+                                ALDI Einkauf GmbH &amp; Co. OHG (1187)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[Hays AG]" class="facet-checkbox">
+                                Hays AG (578)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[NKD Deutschland GmbH]" class="facet-checkbox">
+                                NKD Deutschland GmbH (454)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[Konditorei Junge GmbH ]" class="facet-checkbox">
+                                Konditorei Junge GmbH  (359)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[Ranger Marketing &amp; Vertriebs GmbH]" class="facet-checkbox">
+                                Ranger Marketing &amp; Vertriebs GmbH (347)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[HORNBACH Baumarkt AG  ]" class="facet-checkbox">
+                                HORNBACH Baumarkt AG   (265)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[JOB AG Personaldienstleistungen AG]" class="facet-checkbox">
+                                JOB AG Personaldienstleistungen AG (227)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[SOMA DIE HEAD HUNTER Unternehmergesellschaft (haftungsbeschraenkt) ]" class="facet-checkbox">
+                                SOMA DIE HEAD HUNTER Unternehmergesellschaft (haftungsbeschraenkt)  (199)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[Berner SE  ]" class="facet-checkbox">
+                                Berner SE   (198)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="organizationTag[Sales Experts Germany SEG GmbH ]" class="facet-checkbox">
+                                Sales Experts Germany SEG GmbH  (181)
+                            </label>
+                        </div>
+                                    </div>
+                </div> <!-- facets-collaps-* -->
+            </div>
+                        <div id="facets-box-profession_MultiString" class="panel panel-default">
+                <div class="panel-heading">
+                    <a class="collapsed" style="display:block;width: 100%;text-decoration:none;" data-toggle="collapse" data-parent="#facets-box-profession_MultiString" href="#facets-box-profession_MultiString-content">
+                    Berufsfeld                        <span class="small"></span>
+                    </a>
+
+                </div>
+                <div id="facets-box-profession_MultiString-content" class="panel-collapse collapse ">
+                <div class="panel-body">
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="profession_MultiString[Vertrieb &amp; Marketing]" class="facet-checkbox">
+                                Vertrieb &amp; Marketing (24)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="profession_MultiString[Handwerk]" class="facet-checkbox">
+                                Handwerk (1)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="profession_MultiString[Personal]" class="facet-checkbox">
+                                Personal (1)
+                            </label>
+                        </div>
+                                    </div>
+                </div> <!-- facets-collaps-* -->
+            </div>
+                        <div id="facets-box-industry_MultiString" class="panel panel-default">
+                <div class="panel-heading">
+                    <a class="collapsed" style="display:block;width: 100%;text-decoration:none;" data-toggle="collapse" data-parent="#facets-box-industry_MultiString" href="#facets-box-industry_MultiString-content">
+                    Branchen                        <span class="small"></span>
+                    </a>
+
+                </div>
+                <div id="facets-box-industry_MultiString-content" class="panel-collapse collapse ">
+                <div class="panel-body">
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Bau]" class="facet-checkbox">
+                                Bau (5)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Chemie]" class="facet-checkbox">
+                                Chemie (3)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Pharma]" class="facet-checkbox">
+                                Pharma (3)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Bauindustrie]" class="facet-checkbox">
+                                Bauindustrie (2)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Finance &amp; Accounting]" class="facet-checkbox">
+                                Finance &amp; Accounting (2)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[HR &amp; Business Support]" class="facet-checkbox">
+                                HR &amp; Business Support (2)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Property &amp; Real Estate]" class="facet-checkbox">
+                                Property &amp; Real Estate (2)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Anlagenbau]" class="facet-checkbox">
+                                Anlagenbau (1)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Aufzugsindustrie]" class="facet-checkbox">
+                                Aufzugsindustrie (1)
+                            </label>
+                        </div>
+                                            <div>
+                            <label>
+                                <input type="checkbox" name="industry_MultiString[Automotive - Kunststofftechnik]" class="facet-checkbox">
+                                Automotive - Kunststofftechnik (1)
+                            </label>
+                        </div>
+                                    </div>
+                </div> <!-- facets-collaps-* -->
+            </div>
+            
+        <div class="panel panel-default">
+                <div class="panel-body">
+                    <button id="facets-apply" class="btn btn-primary">Filter anwenden</button>
+                    <button id="facets-reset" class="btn btn-default pull-right">Löschen</button>
+                </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="col-md-9">
+        <div class="row">
+
+      
+
+<div class="row-eq-height">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="featured-image-box">
+            <div class="img-box">
+                <a href="https://arwa.de/de/job/37630/stellenangebote-industriekaufmann-koblenz/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5c98fbe90fc61f4a9d587375.gif">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Industriekaufmann (m/w/d)" href="https://arwa.de/de/job/37630/stellenangebote-industriekaufmann-koblenz/" ref="nofollow" target="_blank">
+                            Industriekaufmann (m/w/d)                        </a>
+                    </h4>
+                    <h5>
+                    <a href="https://www.vertriebskarriere.com/de/profile-ARWA-Personaldienstleistungen-GmbH-5c98fbd20fc61f60d7574e62?clear=1">ARWA Personaldienstleistungen GmbH</a>
+                   </h5>
+                    <p>
+                    <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>Koblenz</p>
+                    <p> Publiziert am:
+                        29.01.20</p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-12 col-sm-6 col-xs-12">
+        <div class="featured-image-box">
+            <div class="img-box">
+                <a href="https://www.telekom.com/de/karriere/jobsuche/jobangebot/senior-accountmanager-sales-automotive-global-bmw-m-w-d-_148253" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5d9b76897eaef64a6b263ec3.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Senior Accountmanager Sales Automotive Global BMW (m/w/d)" href="https://www.telekom.com/de/karriere/jobsuche/jobangebot/senior-accountmanager-sales-automotive-global-bmw-m-w-d-_148253" ref="nofollow" target="_blank">
+                            Senior Accountmanager Sales Automotive Global BMW (m/w/d)                        </a>
+                    </h4>
+                    <h5>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Deutsche-Telekom-AG--5d0a24440fc61f10ba3d3bd8?clear=1">Deutsche Telekom AG </a></h5>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        München, Deutschland                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 335.35px;">
+            <div class="img-box">
+                <a href="https://arwa.de/de/job/27084/stellenangebote-einzelhandelskaufmann-gera/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5c98fbe90fc61f4a9d587375.gif">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Einzelhandelskaufmann (m/w/d)" href="https://arwa.de/de/job/27084/stellenangebote-einzelhandelskaufmann-gera/" ref="nofollow" target="_blank">
+                            Einzelhandelskaufmann (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-ARWA-Personaldienstleistungen-GmbH-5c98fbd20fc61f60d7574e62?clear=1">ARWA Personaldienstleistungen GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Gera                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 390.55px;">
+            <div class="img-box">
+                <a href="https://arwa.de/de/job/37619/stellenangebote-verkaeufer-stendal/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5c98fbe90fc61f4a9d587375.gif">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Verkäufer (m/w/d)" href="https://arwa.de/de/job/37619/stellenangebote-verkaeufer-stendal/" ref="nofollow" target="_blank">
+                            Verkäufer (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-ARWA-Personaldienstleistungen-GmbH-5c98fbd20fc61f60d7574e62?clear=1">ARWA Personaldienstleistungen GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Teilzeit">Teilzeit</span>
+                    </p>
+                    <p>
+                        Stendal                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 390.55px;">
+            <div class="img-box">
+                <a href="https://www.hays.de/jobsuche/t01?prospectId=d51f9d2c-babb-4180-b823-611666004dfa" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5d29cf670fc61f7e4c6025a3.jpg">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="UX Researcher (m/w/d)" href="https://www.hays.de/jobsuche/t01?prospectId=d51f9d2c-babb-4180-b823-611666004dfa" ref="nofollow" target="_blank">
+                            UX Researcher (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Hays-AG-5d29cf510fc61f070347e6a2?clear=1">Hays AG</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Berlin                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 390.55px;">
+            <div class="img-box">
+                <a href="https://karriere.ratioform.de/jobs/258962-customer-sales-agent-m-w-d-befristet-fur-12-bis-18-monate-als-elternzeitvertretung" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5e2ea7704ffee00c334cf8f3.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Customer Sales Agent (m/w/d) befristet für 12 bis 18 Monate als Elternzeitvertretung" href="https://karriere.ratioform.de/jobs/258962-customer-sales-agent-m-w-d-befristet-fur-12-bis-18-monate-als-elternzeitvertretung" ref="nofollow" target="_blank">
+                            Customer Sales Agent (m/w/d) befristet für 
+12 bis 18 Monate als Elternzeitvertretung                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Ratioform-Verpackungen-GmbH--5e2ea6ff4ffee0057a4a1ac2?clear=1">Ratioform Verpackungen GmbH </a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Otto-Lilienthal-Straße 6 / Gewerbegebiet Nord
+                15566 Schöneiche bei Berlin                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 317.75px;">
+            <div class="img-box">
+                <a href="https://www.hays.de/jobsuche/t01?prospectId=f3b078cf-61da-4e06-83e6-372369a5f620" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5d29cf670fc61f7e4c6025a3.jpg">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Produktmanager (m/w/d)" href="https://www.hays.de/jobsuche/t01?prospectId=f3b078cf-61da-4e06-83e6-372369a5f620" ref="nofollow" target="_blank">
+                            Produktmanager (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Hays-AG-5d29cf510fc61f070347e6a2?clear=1">Hays AG</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Stuttgart                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 317.75px;">
+            <div class="img-box">
+                <a href="https://arwa.de/de/job/37680/stellenangebote-metzger-offenbach/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5c98fbe90fc61f4a9d587375.gif">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Metzger (m/w/d)" href="https://arwa.de/de/job/37680/stellenangebote-metzger-offenbach/" ref="nofollow" target="_blank">
+                            Metzger (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-ARWA-Personaldienstleistungen-GmbH-5c98fbd20fc61f60d7574e62?clear=1">ARWA Personaldienstleistungen GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Offenbach                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 317.75px;">
+            <div class="img-box">
+                <a href="https://mytoysgroup.jobs/en/job/teamleiter-seo-3/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5e2ebb974ffee007261fff33.JPG">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Teamleiter SEO *" href="https://mytoysgroup.jobs/en/job/teamleiter-seo-3/" ref="nofollow" target="_blank">
+                            Teamleiter SEO *                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-myToys-de-GmbH-5e2eba994ffee00c4374ba16?clear=1">myToys.de GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Berlin                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://www.hays.de/jobsuche/t01?prospectId=aaa7aad6-278e-418f-9091-869e7211d724" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5d29cf670fc61f7e4c6025a3.jpg">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Eventorganisator und PR-Management (m/w/d)" href="https://www.hays.de/jobsuche/t01?prospectId=aaa7aad6-278e-418f-9091-869e7211d724" ref="nofollow" target="_blank">
+                            Eventorganisator und PR-Management (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Hays-AG-5d29cf510fc61f070347e6a2?clear=1">Hays AG</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Köln                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://www.hays.de/jobsuche/t01?prospectId=0f5feff7-2b11-4f98-8d09-104d3382a2c3" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5d29cf670fc61f7e4c6025a3.jpg">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Online Marketing Manager – Schwerpunkt SEA/SEM (m/w/d)" href="https://www.hays.de/jobsuche/t01?prospectId=0f5feff7-2b11-4f98-8d09-104d3382a2c3" ref="nofollow" target="_blank">
+                            Online Marketing Manager – Schwerpunkt SEA/SEM (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Hays-AG-5d29cf510fc61f070347e6a2?clear=1">Hays AG</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Berlin                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://www.hays.de/jobsuche/t01?prospectId=8307d31a-c6ec-47c6-8eff-e3143cd07b3a" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5d29cf670fc61f7e4c6025a3.jpg">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Senior Trade Marketing Manager - Weißbier (m/w/d)" href="https://www.hays.de/jobsuche/t01?prospectId=8307d31a-c6ec-47c6-8eff-e3143cd07b3a" ref="nofollow" target="_blank">
+                            Senior Trade Marketing Manager - Weißbier (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Hays-AG-5d29cf510fc61f070347e6a2?clear=1">Hays AG</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Kelheim                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://www.knutzen.de/Jobs-Karriere/Stellenangebote/knutzen-schoenberg-verkaeufer-gardinen-und-sonnenschutz-1/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5c2d178400c0508125ec4127.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Verkäufer (m/w/d) für Gardinen und Sonnenschutz in Vollzeit" href="https://www.knutzen.de/Jobs-Karriere/Stellenangebote/knutzen-schoenberg-verkaeufer-gardinen-und-sonnenschutz-1/" ref="nofollow" target="_blank">
+                            Verkäufer (m/w/d) für Gardinen und Sonnenschutz in Vollzeit                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Knutzen-Wohnen-GmbH-5c2d175300c0504135ec4124?clear=1">Knutzen Wohnen GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Kiel                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://www.hays.de/jobsuche/t01?prospectId=db648437-d2d0-4ec4-ba9d-262f122d269b" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5d29cf670fc61f7e4c6025a3.jpg">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Produkt Marketing Manager  (m/w/d)" href="https://www.hays.de/jobsuche/t01?prospectId=db648437-d2d0-4ec4-ba9d-262f122d269b" ref="nofollow" target="_blank">
+                            Produkt Marketing Manager  (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Hays-AG-5d29cf510fc61f070347e6a2?clear=1">Hays AG</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Villingen-Schwenningen                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://jobs.eon.com/romania/job/Timi%C5%9Foara-Operator-Distribu%C5%A3ie-Gaze-Naturale/566776701/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5dee36c54ffee064c3215923.PNG">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Operator Distribuţie Gaze Naturale" href="https://jobs.eon.com/romania/job/Timi%C5%9Foara-Operator-Distribu%C5%A3ie-Gaze-Naturale/566776701/" ref="nofollow" target="_blank">
+                            Operator Distribuţie Gaze Naturale                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile--E-ON-SE--5de90f284ffee0475c48fc46?clear=1"> E.ON SE </a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Timişoara, RO                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 390.55px;">
+            <div class="img-box">
+                <a href="https://karriere.ratioform.de/jobs/209485-mitarbeiter-im-vertriebsinnendienst-b2b-als-customer-sales-agent-m-w-d" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5e2ea7704ffee00c334cf8f3.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Mitarbeiter im Vertriebsinnendienst B2B als Customer Sales Agent (m/w/d)" href="https://karriere.ratioform.de/jobs/209485-mitarbeiter-im-vertriebsinnendienst-b2b-als-customer-sales-agent-m-w-d" ref="nofollow" target="_blank">
+                            Mitarbeiter im Vertriebsinnendienst B2B als Customer Sales Agent (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Ratioform-Verpackungen-GmbH--5e2ea6ff4ffee0057a4a1ac2?clear=1">Ratioform Verpackungen GmbH </a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Otto-Lilienthal-Straße 6 / Gewerbegebiet Nord
+                15566 Schöneiche bei Berlin                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 390.55px;">
+            <div class="img-box">
+                <a href="https://www.knutzen.de/Jobs-Karriere/Stellenangebote/knutzen-hamburg-parkettleger/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5c2d178400c0508125ec4127.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Verkäufer (m/w/d) für Gardinen und Sonnenschutz in Voll- oder Teilzeit" href="https://www.knutzen.de/Jobs-Karriere/Stellenangebote/knutzen-hamburg-parkettleger/" ref="nofollow" target="_blank">
+                            Verkäufer (m/w/d) für Gardinen und Sonnenschutz in Voll- oder Teilzeit                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Knutzen-Wohnen-GmbH-5c2d175300c0504135ec4124?clear=1">Knutzen Wohnen GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Wandsbek                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 390.55px;">
+            <div class="img-box">
+                <a href="https://www.knutzen.de/Jobs-Karriere/Stellenangebote/knutzen-huerup-verkaeufer-gardinen-sonnenschutz/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5c2d178400c0508125ec4127.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Verkäufer (m/w/d) für Gardinen und Sonnenschutz in Voll- oder Teilzeit" href="https://www.knutzen.de/Jobs-Karriere/Stellenangebote/knutzen-huerup-verkaeufer-gardinen-sonnenschutz/" ref="nofollow" target="_blank">
+                            Verkäufer (m/w/d) für Gardinen und Sonnenschutz in Voll- oder Teilzeit                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Knutzen-Wohnen-GmbH-5c2d175300c0504135ec4124?clear=1">Knutzen Wohnen GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Hürup                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://jobs.euroshop-online.de/engage/jobexchange/showJobOfferDetail.do?jobOfferId=4028801b6f37786f016fe72123bd43f9&amp;j=&amp;organizationUnitId=" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5de141394ffee05a980cf933.PNG">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Verkäufer (w/m/d) in Teilzeit für Castrop-Rauxel" href="https://jobs.euroshop-online.de/engage/jobexchange/showJobOfferDetail.do?jobOfferId=4028801b6f37786f016fe72123bd43f9&amp;j=&amp;organizationUnitId=" ref="nofollow" target="_blank">
+                            Verkäufer (w/m/d) in Teilzeit für Castrop-Rauxel                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Schum-EuroShop-GmbH--Co-KG-5de141234ffee025ad105fa2?clear=1">Schum EuroShop GmbH &amp; Co. KG</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Rauxel                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://www.knutzen.de/Jobs-Karriere/Stellenangebote/knutzen-sylt-verkaeufer-gardinen-und-sonnenschutz/" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5c2d178400c0508125ec4127.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Verkäufer (m/w) für Gardinen und Sonnenschutz" href="https://www.knutzen.de/Jobs-Karriere/Stellenangebote/knutzen-sylt-verkaeufer-gardinen-und-sonnenschutz/" ref="nofollow" target="_blank">
+                            Verkäufer (m/w) für Gardinen und Sonnenschutz                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Knutzen-Wohnen-GmbH-5c2d175300c0504135ec4124?clear=1">Knutzen Wohnen GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Tinnum auf Sylt                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 332.95px;">
+            <div class="img-box">
+                <a href="https://zeitarbeit-kassel.com/job/junior-account-manager-m-w-d-personal-in-seevetal-cov-9396-seevetal.html" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5dee6ff04ffee012711f4b65.PNG">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="(Junior) Account-Manager (m/w/d) Personal - in Seevetal" href="https://zeitarbeit-kassel.com/job/junior-account-manager-m-w-d-personal-in-seevetal-cov-9396-seevetal.html" ref="nofollow" target="_blank">
+                            (Junior) Account-Manager (m/w/d) Personal - in Seevetal                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Zeitarbeit-Kassel-GmbH--5dee6fc44ffee012e91b5e32?clear=1">Zeitarbeit Kassel GmbH  </a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Seevetal                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 350.55px;">
+            <div class="img-box">
+                <a href="https://karriere.ratioform.de/jobs/261769-personal-sales-manager-m-w-d" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5e2ea7704ffee00c334cf8f3.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Personal Sales Manager (m/w/d)" href="https://karriere.ratioform.de/jobs/261769-personal-sales-manager-m-w-d" ref="nofollow" target="_blank">
+                            Personal Sales Manager (m/w/d)                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-Ratioform-Verpackungen-GmbH--5e2ea6ff4ffee0057a4a1ac2?clear=1">Ratioform Verpackungen GmbH </a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Union-Brauerei-Straße 4A
+                64521 Groß-Gerau                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 350.55px;">
+            <div class="img-box">
+                <a href="https://muehlbauer.softgarden.io/job/5954125/Senior-Sales-Manager-F%C3%BChrungskraft-mit-Schwerpunkt-China-im-Vertrieb?jobDbPVId=16317765&amp;l=de" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5ddcfa2c4ffee004967e8533.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Senior Sales Manager / Führungskraft mit Schwerpunkt China im Vertrieb" href="https://muehlbauer.softgarden.io/job/5954125/Senior-Sales-Manager-F%C3%BChrungskraft-mit-Schwerpunkt-China-im-Vertrieb?jobDbPVId=16317765&amp;l=de" ref="nofollow" target="_blank">
+                            Senior Sales Manager / Führungskraft mit Schwerpunkt China im Vertrieb                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-M%C3%BChlbauer-GmbH--Co-KG--5ddcfa074ffee004951b4da2?clear=1">Mühlbauer GmbH &amp; Co. KG  </a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Roding                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="featured-image-box" style="height: 350.55px;">
+            <div class="img-box">
+                <a href="https://jobs.retarus.com/de?id=56114b" rel="nofollow" target="_blank">
+                <img class="yk-logo-sm center-block" src="index-Dateien/5d2c56680fc61f451f262083.png">                </a>
+            </div>
+            <div class="content-area">
+                <div class="top-cnt">
+
+                    <h4>
+                        <a title="Junior Account Manager*" href="https://jobs.retarus.com/de?id=56114b" ref="nofollow" target="_blank">
+                            Junior Account Manager*                        </a>
+                    </h4>
+                    <p>
+                    <a href="https://www.vertriebskarriere.com/de/profile-retarus-GmbH-5d2c56540fc61f7c605f6e42?clear=1">retarus GmbH</a>                    </p>
+                    <p>
+                                                <span class="yk-contract yk-Vollzeit">Vollzeit</span>
+                    </p>
+                    <p>
+                        Aschauer Straße 30, 81549 München, Deutschland                    </p>
+                    <p> Publiziert am:
+                        29.01.20                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+    
+    </div>
+
+        </div>
+            <div class="row yk-pagination">
+        <div class="col-md-9">
+            <!-- First page link -->
+            <ul class="pagination">
+                                    <li class="disabled"><a title="Anfang"><i class="yk-icon yk-icon-pagination-start"></i></a></li>
+                                <!-- Previous page link -->
+                                                            <li class="disabled"><a title="Zurück"><i class="fa fa-angle-left"></i></a></li>
+                                    
+                <!-- Numbered page links -->
+                                                            <li class="disabled">
+                            <a>1</a>
+                        </li>
+                                                                                                        <li>
+                            <a href="https://www.vertriebskarriere.com/de/jobs?page=2">
+                                2                            </a>
+                        </li>
+                                                                                                        <li>
+                            <a href="https://www.vertriebskarriere.com/de/jobs?page=3">
+                                3                            </a>
+                        </li>
+                                                                                                        <li>
+                            <a href="https://www.vertriebskarriere.com/de/jobs?page=4">
+                                4                            </a>
+                        </li>
+                                                                                                        <li>
+                            <a href="https://www.vertriebskarriere.com/de/jobs?page=5">
+                                5                            </a>
+                        </li>
+                                    
+
+                <!-- Next page link -->
+                                                                        <li><a title="Weiter" href="https://www.vertriebskarriere.com/de/jobs?page=2"><i class="fa fa-angle-right"></i>
+                                                    </a></li>
+                                                <!-- Last page link -->
+                                    <li><a title="Ende" href="https://www.vertriebskarriere.com/de/jobs?page=450">
+                            <i class="yk-icon yk-icon-pagination-end"></i>
+                        </a></li>
+                            </ul>
+        </div>
+        <div class="col-md-3 text-right">
+            1 - 24            von 10777        </div>
+    </div>
+
+    </div>
+        </div>                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<div class="modal fade" id="job-apply-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" style="width: 90%; height: 90%" role="document">
+        <div class="modal-content" style="height: 100%">
+            <div class="modal-body" style="height: calc(100% - 65px)">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-md-2">
+                <h5>Über Vertriebskarriere.com</h5>
+                <nav>
+                    <ul class="list-unstyled">
+                        <li><a title="" href="https://www.vertriebskarriere.com/de/wp/page/ueber-uns">Über uns</a></li>
+                        <li><a title="" href="https://www.vertriebskarriere.com/de/wp/page/jobs">Arbeiten bei uns</a></li>
+                        <!-- <li><a title="" href="/de/wp/page/partnernetzwerk">Partnernetzwerk</a></li>-->
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xs-6 col-md-2">
+                <h5>Social Media</h5>
+                <nav>
+                    <ul class="list-unstyled">
+                        <li><a title="Stelllenmarkt bei Facebook" href="https://www.facebook.com/stellenmarkt.de/" target="_blank">Facebook</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xs-6 col-md-2">
+                <h5>Für Arbeitgeber</h5>
+                <nav>
+                    <ul class="list-unstyled">
+                         <li><a title="Häufige Fragen &amp; Antworten" href="https://www.vertriebskarriere.com/de/wp/page/faq">Hilfe</a></li>
+                                                <li><a title="Login für Arbeitgeber" href="https://www.vertriebskarriere.com/de/login?ref=%2Fde%2Fdashboard">Einloggen</a></li>
+                                                 <li><a title="Preise &amp; Leistungen" href="https://www.vertriebskarriere.com/de/wp/page/job-abc">Job ABC</a></li>                       </ul>
+                </nav>
+            </div>
+            <!--<div class="col-md-offset-3 col-md-3">
+                            </div>-->
+        </div>
+
+        <hr style="border-top: 1px solid #b6bed6">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <nav>
+                    <ul class="list-inline">
+                        <li><a title="Impressum" href="https://www.vertriebskarriere.com/de/wp/page/impressum">Impressum</a></li>
+                        <li><a title="AGB" href="https://www.vertriebskarriere.com/de/wp/page/agb">AGB</a></li>
+                    </ul>
+                </nav>
+                <p>Copyright © Vertriebskarriere.com 2020</p>
+            </div>
+        </div>
+</div></footer>
+<script>
+  new cookieNoticeJS({
+
+    // Localizations of the notice message
+    'messageLocales': {
+      'it': 'Custom localized message'
+    },
+
+    // Localizations of the dismiss button text
+    'buttonLocales': {
+      'it': 'Chiudi'
+    },
+
+    // Position for the cookie-notifier (default=bottom)
+    'cookieNoticePosition': 'top',
+
+    // Shows the "learn more button (default=false)
+    'learnMoreLinkEnabled': false,
+
+    // The message will be shown again in X days
+    'expiresIn': 30,
+
+    // Dismiss button background color
+    'buttonBgColor': '#d35400',
+
+    // Dismiss button text color
+    'buttonTextColor': '#fff',
+
+    // Notice background color
+    'noticeBgColor': '#000',
+
+    // Notice text color
+    'noticeTextColor': '#fff',
+
+    // the learnMoreLink color (default='#009fdd')
+    'linkColor': '#f00',
+
+    // The target of the learn more link (default='', or '_blank')
+    'linkTarget': '',
+
+    // Print debug output to the console (default=false)
+    'debug': false
+  });
+</script>
+
+
+
+</body></html>
